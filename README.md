@@ -1,67 +1,68 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+**Design Pattern: Custom Oauth Login and Registration Integration**
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**Intent:**
+The Custom Oauth Login and Registration Integration design pattern is intended to provide a structured approach to building a user authentication system with registration and login options, including social platform integration (Google and GitHub) in a Laravel-based web application. The system ensures a seamless user experience with a custom login and registration form.
 
-## About Laravel
+**Participants:**
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+1. **User:** Represents individuals who use the web application.
+2. **Frontend:** The user interface for login, registration, and interaction with social login options.
+3. **Backend:** The application logic that processes user authentication, registration, and user account management.
+4. **Database:** Stores user account information and social platform credentials.
+5. **OAuth Provider (Google and GitHub):** External services that facilitate user authentication through OAuth 2.0.
+6. **Web Server:** Serves web pages and handles HTTP requests.
+7. **Version Control (Git):** Manages source code and project history.
+8. **Command Line Interface (Git Bash):** Used for command-line operations and interaction with Git.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+**Components:**
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+1. **User Registration:**
+   - Allows users to create new accounts with custom credentials.
+   - Validates user inputs and stores account details in the database.
 
-## Learning Laravel
+2. **User Login:**
+   - Authenticates registered users using custom credentials.
+   - Provides secure access to user accounts.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+3. **Social Platform Integration:**
+   - Offers Google and GitHub login options.
+   - Redirects users to the respective OAuth providers for authentication.
+   - Verifies user credentials with the OAuth providers.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+4. **User Account Management:**
+   - Manages user accounts and profiles.
+   - Allows users to update account details, including email and password changes.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+5. **Database Integration:**
+   - Connects to the MySQL database to store user account data securely.
 
-## Laravel Sponsors
+**Sample Flow:**
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+1. **User Registration:**
+   - Users access the registration form.
+   - They enter their details (name, email, password) and submit the form.
+   - The backend validates the data and creates a new user account in the database.
 
-### Premium Partners
+2. **User Login:**
+   - Registered users visit the login page.
+   - They enter their credentials (email and password) and submit the form.
+   - The backend verifies the credentials and grants access to the user's account.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+3. **Social Platform Integration:**
+   - Users have the option to log in with Google or GitHub.
+   - Clicking the social login buttons redirects them to the respective OAuth providers.
+   - After successful authentication, the OAuth provider sends user data back to the application.
+   - The application verifies the data and logs the user in or registers a new user if needed.
 
-## Contributing
+**Benefits:**
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- Customized user experience: Offers custom registration and login forms.
+- Integration with popular social platforms: Allows users to log in with their existing Google or GitHub accounts.
+- Data security: Safely stores user account information in a MySQL database.
 
-## Code of Conduct
+**Considerations:**
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- Data privacy: Ensure that user data is securely handled and that privacy policies are respected.
+- Usability and accessibility: Create a user-friendly interface that accommodates users of all abilities.
+- Performance: Optimize the application for speed and responsiveness.
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# laravel-OAuth
