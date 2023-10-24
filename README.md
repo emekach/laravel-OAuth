@@ -3,6 +3,8 @@
 **Intent:**
 The Custom Oauth Login and Registration Integration design pattern is intended to provide a structured approach to building a user authentication system with registration and login options, including social platform integration (Google and GitHub) in a Laravel-based web application. The system ensures a seamless user experience with a custom login and registration form.
 
+view demo link : https://youtu.be/U9S2QOFsA5g
+
 **Participants:**
 
 1. **User:** Represents individuals who use the web application.
