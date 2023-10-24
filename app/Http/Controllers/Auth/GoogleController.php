@@ -54,7 +54,7 @@ class GoogleController extends Controller
             }
         } catch (\Exception $e) {
 
-            dd($e);
+            return redirect()->route('login')->with('error', 'Failed to authenticate with Google');
         }
     } // End Method
 }

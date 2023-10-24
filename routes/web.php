@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\GoogleController;
+use App\Http\Controllers\Auth\LinkedinController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,6 +19,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/auth/google/redirect', [GoogleController::class, 'handleGoogleRedirect'])->name('google.login');
 
 Route::get('/auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
+
+Route::get('auth/linkedin/redirect', [LinkedinController::class, 'handleLinkedinRedirect'])->name('linkedin.login');
+
+Route::get('auth/linkedin/callback', [LinkedinController::class, 'handleLinkedinCallback']);
 
 Route::get('/', function () {
     return view('welcome');
