@@ -61,13 +61,13 @@
     <div class="form-group row">
         <div class="col-md-6 offset-md-3">
 
-            <a href="{{route('linkedin.login')}}" class="btn btn-primary btn-block">Login with LinkedIn</a>
+            <!-- <a href="{{route('linkedin.login')}}" class="btn btn-primary btn-block">Login with LinkedIn</a>
             <br><br>
             <a href="" class="btn btn-primary btn-block">Login with Twitter</a>
+            <br><br> -->
+            <a href="{{route('github.login')}}" class="btn btn-dark btn-block">Login with GitHub</a>
             <br><br>
-            <a href="" class="btn btn-dark btn-block">Login with GitHub</a>
-            <br><br>
-            <a href="" class="btn btn-primary btn-block">Login with FaceBook</a>
+            <!-- <a href="" class="btn btn-primary btn-block">Login with FaceBook</a> -->
 
         </div>
     </div>

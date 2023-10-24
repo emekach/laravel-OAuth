@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\GithubController;
 use App\Http\Controllers\Auth\GoogleController;
 use App\Http\Controllers\Auth\LinkedinController;
 use App\Http\Controllers\ProfileController;
@@ -23,6 +24,11 @@ Route::get('/auth/google/callback', [GoogleController::class, 'handleGoogleCallb
 Route::get('auth/linkedin/redirect', [LinkedinController::class, 'handleLinkedinRedirect'])->name('linkedin.login');
 
 Route::get('auth/linkedin/callback', [LinkedinController::class, 'handleLinkedinCallback']);
+
+
+Route::get('auth/github/redirect', [GithubController::class, 'handleGithubRedirect'])->name('github.login');
+Route::get('auth/github/callback', [GithubController::class, 'handleGithubCallback']);
+
 
 Route::get('/', function () {
     return view('welcome');
